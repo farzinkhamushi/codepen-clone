@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="root_style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./image/codepen favicon.png" type="image/x-icon">
+    <title>CodePen:Online Code Editor and Front End Web Developers</title>
+</head>
+<body>
+    <div class="sidebar_toggler">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+        width="20" 
+        height="20" 
+        viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
+    </div>
+
+    <div class="sidebar">
+        <ul>
+            <li>
+                <a href="#">item</a>
+            </li>
+            <li>
+                <a href="#">item</a>
+            </li>
+            <li>
+                <a href="#">item</a>
+            </li>
+            <li>
+                <a href="#">item</a>
+            </li>
+            <li>
+                <a href="#">item</a>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="nav">
+            
+            <div class="rightside">
+                <div class="searchable">
+                    <!--  
+                        <i class='bx bx-search bx-tada' style="color:rgb(89, 95, 92);width: 50px;height: 50px;"></i>
+                    -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                        viewBox="0 0 24 24" 
+                        style="fill: #7c807d;">
+                        <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path></svg>
+                    <input type="text" name="search" id="" placeholder="Search CodePen...">
+                </div>
+            </div>
+
+            <div class="leftside">
+                <button class="language">en</button>
+                <div class="theme_toggler_container">
+                    <div class="theme_toggler"><i class="bx bx-sun"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div>
+                <h1>Skeleton of the most apps</h1>
+                <p>something here as a main content or the commercial goals of the app</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        
+        const sidebar_toggler = document.querySelector(".sidebar_toggler");
+        const sidebar = document.querySelector('.sidebar');
+        
+        const theme_toggler_container = document.querySelector('.theme_toggler_container');
+        const theme_toggler = document.querySelector('.theme_toggler');
+        const theme_toggler_i = document.querySelector('.theme_toggler i');
+
+
+        let i = 0;
+        //theme toggler
+        theme_toggler_container.addEventListener('click', () => {
+            theme_toggler_i.classList.toggle('bx-moon');
+            theme_toggler_i.classList.toggle('bx-sun');
+
+            if (i == 0) {
+                theme_toggler.style.left = "20px";
+                i=1;
+            }else{
+                theme_toggler.style.left = "0px";
+                i=0;
+            }
+        });
+
+
+        //sidebar close and open
+        let j=0;
+        let s_left = "0px";
+        let k=1;
+        sidebar_toggler.addEventListener('click', () => {
+            sidebar.classList.toggle('close');
+            if (j==0) {
+                //sidebar.style.left = "-167px";
+                sidebar_toggler.style.left = "-17px";
+                s_left = "-167px";
+                j=1;
+            }else{
+                //sidebar.style.left = "0px";
+                sidebar_toggler.style.left = "167px";
+                s_left = "0px";
+                k=0;
+                j=0;
+            }
+        });
+
+        sidebar.addEventListener('mouseenter',() => {
+            sidebar_toggler.style.transition = "0.3s ease";
+            if (s_left == "-167px") {
+                sidebar_toggler.style.left = "13px";
+            }
+            if (s_left == "0px") {
+                if(k==1){
+                    sidebar_toggler.style.left = "180px";
+                    k=0;
+                }
+            }
+        });
+
+        sidebar.addEventListener('mouseleave',() => {
+            k=1;
+            sidebar_toggler.style.transition = "0.3s ease";
+            sidebar_toggler.addEventListener('mouseenter',() => {
+                if (s_left == "-167px") {
+                    sidebar_toggler.style.left = "13px";
+                }else{
+                    if (s_left == "0px") {
+                        sidebar_toggler.style.left = "180px";
+                    }
+                }
+            });
+            sidebar_toggler.addEventListener('mouseleave',() => {
+                if (s_left == "-167px") {
+                    sidebar_toggler.style.left = "-17px";
+                }else{
+                    sidebar_toggler.style.left = "150px";
+                }
+            });
+            if (s_left == "-167px") {
+                sidebar_toggler.style.left = "-17px";
+            }else{
+                sidebar_toggler.style.left = "150px";
+            }
+        });
+
+
+
+        let themeChanger = () => {
+            //
+        }
+    </script>
+</body>
+</html>

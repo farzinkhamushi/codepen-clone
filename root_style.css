@@ -1,0 +1,27 @@
+:root{
+    --darkest-bg-color:#0a0a0a;
+    --darker-bg-color:#161616;
+    --dark-bg-color:#292929;
+    --grey-bg-color:#595f5c;
+
+    --indicator-bg-color:#53545f;
+    --indicator-hover-bg-color:#676875;
+
+    --nav-left-bg-color:#1d00c4;
+    --nav-right-bg-color:#320ff7;
+    --below-box-bg-color:#2de200;
+
+    --sidebar-close-width: 13px;
+    --sidebar-close-left: -167px;
+    --sidebar-open-width: 180px;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
