@@ -6,9 +6,8 @@
     height: 100vh;
     background-color: var(--darker-bg-color);
     transition: 0.3s ease;
-    z-index: -100;
+    z-index: 100;
 }
-
 .sidebar{
     position: fixed;
     left: 0;
@@ -17,11 +16,10 @@
     width:var(--sidebar-open-width);
     background-color: var(--dark-bg-color);
     transition: 0.3s ease;
-    z-index: 100;
+    z-index: 200;
 }
-
 .sidebar_toggler{
-    z-index: 0;
+    z-index: 150;
     width: 30px;
     height: 30px;
     position: absolute;
@@ -35,22 +33,16 @@
     align-items: center;
     justify-content: center;
 }
-
 .sidebar_toggler:hover{
     background-color: var(--indicator-hover-bg-color);
     transition: background-color 0.3s ease;
 }
-/*
-*/
-
 .sidebar.close{
     left: var(--sidebar-close-left);
     /*
     width: var(--sidebar-close-width);
     */
 }
-
-
 .sidebar.close~.content{
     left: var(--sidebar-close-width);
     width: calc(100% - var(--sidebar-close-width));
