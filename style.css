@@ -111,6 +111,8 @@
 
 .rightside .searchable input:focus{
     outline: none;
+    color: #888a9c !important;
+    background-color: var(--darker-bg-color);
 }
 
 
@@ -137,16 +139,47 @@
     align-items: center;
 }
 
-.theme_toggler_container .theme_toggler i{
-    /*
-    transition animation 
-    doesn't word beacause 
-    the bx-moon and bx-sun classes 
-    which are set by the code 
-    is read at the moment
-    */
 
-    /*
-    transition: 0.5s ease;
-    */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* حذف فلش‌ها در مرورگرهای مبتنی بر WebKit (مانند Chrome, Safari) */
+.number_input::-webkit-inner-spin-button,
+.number_input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    
+    
+}
+/* حذف فلش‌ها در Firefox */
+.number_input {
+    -moz-appearance: textfield;
+}
+/* حذف فلش‌ها در مرورگرهای مبتنی بر WebKit (مانند Chrome, Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* حذف فلش‌ها در Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
 }
