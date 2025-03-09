@@ -164,21 +164,29 @@
 .number_input::-webkit-inner-spin-button,
 .number_input::-webkit-outer-spin-button {
     -webkit-appearance: none;
-    margin: 0;
-    
-    
+    margin: 0;   
 }
-/* حذف فلش‌ها در Firefox */
 .number_input {
+    /* حذف فلش‌ها در Firefox */
     -moz-appearance: textfield;
+    height: 30px;
+    color: #d3d3d3 !important;
+    background-color: #969696;
+    border-radius: 3px;
 }
+.number_input:focus{
+    outline: none;
+    color: #d3d3d3 !important;
+    background-color: #969696;
+}
+
+
 /* حذف فلش‌ها در مرورگرهای مبتنی بر WebKit (مانند Chrome, Safari) */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
 /* حذف فلش‌ها در Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
